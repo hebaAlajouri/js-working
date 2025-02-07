@@ -132,20 +132,31 @@
       // Add event listener to form submission
       document.getElementById('contactForm').addEventListener('submit', function (e) {
         e.preventDefault(); // Prevent the default form submission
-
+    
         // Retrieve values from the form
         const name = document.getElementById('ebook-form-name').value;
         const email = document.getElementById('ebook-email').value;
         const order = document.getElementById('ebook-form-order').value;
-
-        // Store data in localStorage
-        localStorage.setItem('userName', name);
-        localStorage.setItem('userEmail', email);
-        localStorage.setItem('userOrder', order);
-
+    
+        // Create an object with the form data
+        const newOrder = { name, email, order };
+    
+        // Get existing orders from localStorage or initialize an empty array
+        let orders = JSON.parse(localStorage.getItem('orders')) || [];
+    
+        // Add the new order to the array
+        orders.push(newOrder);
+    
+        // Save the updated orders array back to localStorage
+        localStorage.setItem('orders', JSON.stringify(orders));
+    
         // Optional: Show a confirmation message
-        alert('Your information has been saved to local storage!');
+        alert('Your order has been saved!');
+    
+        // Clear form fields
+        document.getElementById('contactForm').reset();
       });
     </script>
+    
   </body>
 </html>
