@@ -38,4 +38,79 @@
 //         });
 //     }
 // });
+"use strict";
+document.addEventListener('DOMContentLoaded', () => {
+    // Function to render favorite books
+    function renderFavorites() {
+        const favoritesContainer = document.getElementById('favorites-list');
+        let selectedBooks = JSON.parse(localStorage.getItem('favoriteBooks')) || [];
+
+        // Clear current list
+        favoritesContainer.innerHTML = '';
+
+        // Loop through the books and add them to the container
+        selectedBooks.forEach(book => {
+            let card = document.createElement('div');
+            card.classList.add('card');
+            
+            // Add book info to the card
+            card.innerHTML = `
+                <img src="${book.imageUrl}" alt="${book.title}" class="card-img-top">
+                <div class="card-body">
+                    <h5 class="card-title">${book.title}</h5>
+                    <a href="${book.infoUrl}" class="btn btn-primary">More info</a>
+                </div>
+            `;
+            
+            // Append card to favorites container
+            favoritesContainer.appendChild(card);
+        });
+    }
+
+    // Render favorites on page load
+    renderFavorites();
+
+    // Function to handle "love" button clicks
+    document.querySelectorAll('.love').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const bookId = event.target.getAttribute('data-book-id');
+            const bookTitle = event.target.closest('.info').querySelector('a').innerText; // Get the book title
+            const bookImage = event.target.closest('.col-md-4').querySelector('img').src; // Get the book image URL
+            const bookInfoUrl = event.target.closest('.info').querySelector('a').href; // Get the book info URL
+
+            // Retrieve the existing list of selected books or initialize an empty array
+            let selectedBooks = JSON.parse(localStorage.getItem('favoriteBooks')) || [];
+
+            // Check if the book is already in the favorites list
+            let bookExists = selectedBooks.some(book => book.id === bookId);
+            if (!bookExists) {
+                // Create a new book object
+                let bookInfo = {
+                    id: bookId,
+                    title: bookTitle,
+                    imageUrl: bookImage,
+                    infoUrl: bookInfoUrl
+                };
+
+                // Add the new book to the favorites list
+                selectedBooks.push(bookInfo);
+
+                // Save the updated favorites list to localStorage
+                localStorage.setItem('favoriteBooks', JSON.stringify(selectedBooks));
+
+                // Re-render the favorites section
+                renderFavorites();
+            }
+        });
+    });
+});
+
+
+
+
+
+  
+  
+  
+
 
