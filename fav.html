@@ -6,8 +6,80 @@
     <title>Favorites</title>
     <link rel="stylesheet" href="css/stylefav.css" />
     <script src="https://kit.fontawesome.com/YOUR_FONT_AWESOME_KEY.js" crossorigin="anonymous"></script>
+      <!-- CSS FILES -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+        href="https://fonts.googleapis.com/css2?family=Unbounded:wght@300;400;600;700&display=swap"
+        rel="stylesheet"
+      />
+      <link href="css/bootstrap.min.css" rel="stylesheet" />
+      <link href="css/bootstrap-icons.css" rel="stylesheet" />
+      <link href="css/templatemo-ebook-landing.css" rel="stylesheet" />
   </head>
   <body>
+    <nav class="navbar navbar-expand-lg" style="background-color:rgb(19, 19, 19)">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <i class="navbar-brand-icon bi-book me-2"></i>
+            <span>RiwayaHub</span>
+          </a>
+
+          <div class="d-lg-none ms-auto me-3">
+            <a
+              href="#"
+              class="btn custom-btn custom-border-btn btn-naira btn-inverted"
+            >
+              <i class="btn-icon bi-cloud-download"></i>
+              <span>search</span
+              ><!-- duplicated another one below for mobile -->
+            </a>
+          </div>
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-lg-auto me-lg-4">
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="./index.html">Home</a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="./about.html">About us</a
+                >
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="./readLater.html">Favourite</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link click-scroll" href="./contact.html">Contact</a>
+              </li>
+            </ul>
+
+            <div class="d-none d-lg-block">
+              <a
+                href=""
+                class="btn custom-btn custom-border-btn btn-naira btn-inverted"
+              >
+                <i class="btn-icon bi-cloud-download"></i>
+                <span>Log in</span
+                ><!-- duplicated above one for mobile -->
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
     <h1>My Favorite Books</h1>
     <div id="favoritesContainer" class="book-cards"></div>
     
