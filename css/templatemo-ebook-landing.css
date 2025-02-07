@@ -951,6 +951,15 @@ strong {
   background: var(--primary-color);
   color: var(--white-color);
 }
+/*/////////////////////////////Our Edit/////////////////////////////////////////*/
+
+.carousel-control-next,
+.carousel-control-prev {
+  align-self: center;
+  height: 3rem;
+  width: 3rem;
+ background-color: #000000;
+}
 
 /*---------------------------------------
   RESPONSIVE STYLES               
