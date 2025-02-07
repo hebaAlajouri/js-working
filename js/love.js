@@ -106,54 +106,97 @@
 // });
 document.addEventListener("DOMContentLoaded", () => {
     loadFavorites();
-
+  
+    // Add event listener to all love buttons
     document.querySelectorAll(".love").forEach((button) => {
-        button.addEventListener("click", () => {
-            const bookId = button.dataset.bookId; // FIXED dataset key
-            toggleFavorite(bookId, button);
-        });
+      button.addEventListener("click", () => {
+        const bookId = button.dataset.bookId; // Fix dataset key
+        toggleFavorite(bookId, button);
+      });
     });
-});
-
-function toggleFavorite(bookId, button) {
+  });
+  
+  function toggleFavorite(bookId, button) {
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-
+  
     const bookCard = button.closest(".col-md-4");
     if (!bookCard) return; // Prevent errors if the structure is incorrect
-
+  
     const bookData = {
-        id: bookId,
-        imgSrc: bookCard.querySelector("img").src,
-        title: bookCard.querySelector(".info a").textContent.trim(),
-        link: bookCard.querySelector(".info a").href,
+      id: bookId,
+      imgSrc: bookCard.querySelector("img").src,
+      title: bookCard.querySelector(".info a").textContent.trim(),
+      link: bookCard.querySelector(".info a").href,
     };
-
+  
+    // Check if the book is already in favorites
     const existingBook = favorites.find((book) => book.id === bookId);
-
+  
     if (!existingBook) {
-        favorites.push(bookData); // Add to favorites
-        button.innerHTML = `<i class="fa-solid fa-heart"></i>`; // Filled heart
+      // Add to favorites
+      favorites.push(bookData);
+      button.innerHTML = `<i class="fa-solid fa-heart"></i>`; // Filled heart
     } else {
-        favorites = favorites.filter((book) => book.id !== bookId); // Remove from favorites
-        button.innerHTML = `<i class="fa-regular fa-heart"></i>`; // Empty heart
+      // Remove from favorites
+      favorites = favorites.filter((book) => book.id !== bookId);
+      button.innerHTML = `<i class="fa-regular fa-heart"></i>`; // Empty heart
     }
-
-    localStorage.setItem("favorites", JSON.stringify(favorites)); // Save the updated favorites array
-}
-
-function loadFavorites() {
+  
+    // Save the updated favorites to local storage
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+  }
+  
+  function loadFavorites() {
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    
-    document.querySelectorAll(".love").forEach((button) => {
-        const bookId = button.dataset.bookId;
-        // Check if the book is already in the favorites list and update the button accordingly
-        if (favorites.some((book) => book.id === bookId)) {
-            button.innerHTML = `<i class="fa-solid fa-heart"></i>`; // Filled heart
-        } else {
-            button.innerHTML = `<i class="fa-regular fa-heart"></i>`; // Empty heart
-        }
+    const container = document.getElementById("favoritesContainer");
+  
+    // Clear any previously displayed favorites (optional)
+    container.innerHTML = '';
+  
+    // Loop through the favorites and create the card elements
+    favorites.forEach((book) => {
+      const card = document.createElement("div");
+      card.className = "card favorite";
+      card.setAttribute("data-id", book.id);
+  
+      const img = document.createElement("img");
+      img.src = book.imgSrc;
+      img.alt = "Book Cover";
+  
+      const title = document.createElement("h2");
+      title.textContent = book.title;
+  
+      const description = document.createElement("p");
+      description.textContent = "Description goes here..."; // You can update this with the actual description if available
+  
+      const button = document.createElement("span");
+      button.className = "heart liked";
+      button.innerHTML = "&#10084;";
+      button.dataset.bookId = book.id;
+      button.onclick = function () {
+        removeFromFavorites(book.id);
+      };
+  
+      card.appendChild(img);
+      card.appendChild(title);
+      card.appendChild(description);
+      card.appendChild(button);
+  
+      container.appendChild(card);
     });
-}
+  }
+  
+  function removeFromFavorites(bookId) {
+    let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
+    favorites = favorites.filter((book) => book.id !== bookId);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    window.location.reload(); // Reload the page to update the displayed favorites
+  }
+  
+  
+
+
+
 
 
 
