@@ -104,7 +104,7 @@
         class="hero-section d-flex justify-content-center align-items-center"
         id="section_1"
       >
-        <div class="container">
+        <div class="container" style="z-index: 1;">
           <div class="row">
             <div class="col-lg-6 col-12 mb-5 pb-5 pb-lg-0 mb-lg-0">
               <h6>Introducing ebook</h6>
@@ -181,34 +181,37 @@
       <!-- Bootstrap Carousel -->
       <section class="container my-5">
         <h2 class="text-center"style="margin-top=5rem">Our Book Collection</h2>
-        <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
-            Select Book Type
+        <div class="dropdown-center" style="z-index: 3">
+          <button
+            class="btn btn-secondary dropdown-toggle"
+            type="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Centered dropdown
           </button>
-          <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #e76f51;">
-            <li><a class="dropdown-item" href="#all" >all</a></li>
-            <li><a class="dropdown-item" href="#fiction">Fiction</a></li>
-            <li><a class="dropdown-item" href="#Literature">Literature</a></li>
-            <li><a class="dropdown-item" href="#Drama">Drama</a></li>
-            <li><a class="dropdown-item" href="#History">History</a></li>
-            <li><a class="dropdown-item" href="#Science">Science</a></li>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#Scientific">Scientific</a></li>
+            <li><a class="dropdown-item" href="#Novel">Novel</a></li>
+            <li><a class="dropdown-item" href="#Self_Developement">Self Developement</a></li>
           </ul>
         </div>
+     
  
     
     <!-- Second Carousel -->
-    <section class="container my-5">
+    <section class="container my-5" id="Novel">
         <h2 class="text-center"></h2>
     
         <!-- Swiper 2: Featured Books -->
-        <h3 class="text-center mt-4">📖 Featured Books</h3>
-        <div id="carouselTwo" class="carousel slide" data-bs-ride="false">
+        <h3 class="text-center mt-4">📖 Novel</h3>
+        <div id="carouselTwo" class="carousel slide" data-bs-ride="false" >
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row g-3 justify-content-center">
-                        <div class="col-md-4">
+                        <div class="col-md-4" style="width: 15rem;height: 20rem;">
                             <img src="https://ia804508.us.archive.org/BookReader/BookReaderImages.php?zip=/14/items/moby-dick-herman-melville/Moby%20Dick_Herman%20Melville_jp2.zip&file=Moby%20Dick_Herman%20Melville_jp2/Moby%20Dick_Herman%20Melville_0000.jp2&id=moby-dick-herman-melville&scale=4&rotate=0" 
-                                 class="d-block w-100" alt="Book 7">
+                                 class="d-block w-100" alt="Book 7" style="width: 20rem;height: 15rem;">
                             <div class="info">
                               <a href="https://archive.org/download/moby-dick-herman-melville/Moby%20Dick_Herman%20Melville.pdf" class="btn custom-btn me-3" target="_blank">More info</a>
 
@@ -217,19 +220,31 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1688632685i/184605929.jpg" 
-                                 class="d-block w-100" alt="Book 8">
-                            <div class="info">
-                                <a href="https://bramstoker.org/pdf/novels/05dracula.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
-                                <button type="button" class="love" data-book-id="book8">
-                                    <i class="fa-regular fa-heart"></i> <!-- empty heart -->
-                                </button>
-                            </div>
+                        
+                        
+                        <div class="col-md-4"style="width: 15rem;height: 20rem;">
+                          <img src="https://th.bing.com/th/id/OIP.4w1AKpDua3aXXogvQ8eEfgHaLH?rs=1&pid=ImgDetMain" 
+                               class="d-block w-100" alt="Book 8"style="width: 20rem;height: 15rem;">
+                          <div class="info">
+                              <a href=https://freeclassicebooks.com/frances%20hodgson%20burnett/the%20secret%20garden.pdf class="btn custom-btn smoothscroll me-3">More info</a>
+                              <button type="button" class="love" data-book-id="book8">
+                                  <i class="fa-regular fa-heart"></i> <!-- empty heart -->
+                              </button>
+                          </div>
+                      </div>
+                      <div class="col-md-4"style="width: 15rem;height: 20rem;">
+                        <img src="https://th.bing.com/th/id/OIP.cNoKzRLSelaDPYLJwv-Q9AHaJ4?rs=1&pid=ImgDetMain" 
+                             class="d-block w-100" alt="Book 8"style="width: 20rem;height: 15rem;">
+                        <div class="info">
+                            <a href="https://www.ibiblio.org/ebooks/London/Call%20of%20Wild.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
+                            <button type="button" class="love" data-book-id="book8">
+                                <i class="fa-regular fa-heart"></i> <!-- empty heart -->
+                            </button>
                         </div>
-                        <div class="col-md-4">
+                    </div>
+                        <div class="col-md-4"style="width: 15rem;height: 20rem;">
                             <img src="https://cdn-2.pdfdrive.to/media/content/thumbnails/935c07e2-0f73-49ec-85b6-78214b1468a7.webp" 
-                                 class="d-block w-100" alt="Book 9">
+                                 class="d-block w-100" alt="Book 9"style="width: 20rem;height: 15rem;">
                             <div class="info">
                                 <a href="https://www.gutenberg.org/files/1342/old/old/pandp12p.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
                                 <button type="button" class="love" data-book-id="book9">
@@ -241,9 +256,9 @@
                 </div>
                 <div class="carousel-item">
                     <div class="row g-3 justify-content-center">
-                        <div class="col-md-4">
+                        <div class="col-md-4"style="width: 15rem;height: 20rem;">
                             <img src="https://www.booksfree.org/wp-content/uploads/2021/08/The-Picture-of-Dorian-Gray-pdf-free-download.jpg" 
-                                 class="d-block w-100" alt="Book 10">
+                                 class="d-block w-100" alt="Book 10"style="width: 20rem;height: 15rem;">
                             <div class="info">
                                 <a href="https://ia903008.us.archive.org/19/items/thepictureofdoriangray_201908/The%20Picture%20of%20Dorian%20Gray_text.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
                                 <button type="button" class="love" data-book-id="book10">
@@ -251,9 +266,9 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4"style="width: 15rem;height: 20rem;">
                             <img src="https://th.bing.com/th/id/R.97a3db160e61253b8d6e0bbe8e08b944?rik=g4eQsHxZE0vt%2bQ&pid=ImgRaw&r=0" 
-                                 class="d-block w-100" alt="Book 11">
+                                 class="d-block w-100" alt="Book 11"style="width: 20rem;height: 15rem;">
                             <div class="info">
                                 <a href="https://ia902908.us.archive.org/9/items/Frankenstein1818Edition/Frankenstein.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
                                 <button type="button" class="love" data-book-id="book11">
@@ -261,9 +276,20 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4"style="width: 15rem;height: 20rem;">
+                          <img src="https://th.bing.com/th/id/OIP.Eg35AF50_O5xV_IekEMIBAHaL9?rs=1&pid=ImgDetMain" 
+                               class="d-block w-100" alt="Book 11"style="width: 20rem;height: 15rem;">
+                          <div class="info">
+                              <a href="https://dn720002.ca.archive.org/0/items/books_202205/strange-case-of-dr-jekyll-and-mr-hyde.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
+                              <button type="button" class="love" data-book-id="book11">
+                                  <i class="fa-regular fa-heart"></i> <!-- empty heart -->
+                              </button>
+                          </div>
+                      </div>
+                
+                        <div class="col-md-4"style="width: 15rem;height: 20rem;">
                             <img src="https://th.bing.com/th/id/OIP.e1_ZYGxgOFAKIjkBHgXBagHaKf?rs=1&pid=ImgDetMain" 
-                                 class="d-block w-100" alt="Book 12">
+                                 class="d-block w-100" alt="Book 12"style="width: 20rem;height: 15rem;">
                             <div class="info">
                                 <a href="https://ia801801.us.archive.org/15/items/the-great-gatsby_202101/TheGreatGatsby.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
                                 <button type="button" class="love" data-book-id="book12">
@@ -285,18 +311,18 @@
     </section>
     
     <!-- Third Carousel -->
-    <section class="container my-5">
+    <section class="container my-5" id="Self_Developement">
         <h2 class="text-center"></h2>
     
         <!-- Swiper 3: Featured Books -->
-        <h3 class="text-center mt-4">📖 Featured Books</h3>
+        <h3 class="text-center mt-4">📖 Self Developement</h3>
         <div id="carouselThree" class="carousel slide" data-bs-ride="false">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <div class="row g-3 justify-content-center">
-                        <div class="col-md-4">
+                        <div class="col-md-4"style="width: 15rem;height: 20rem;">
                             <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1172678882i/206159.jpg" 
-                                 class="d-block w-100" alt="Book 13">
+                                 class="d-block w-100" alt="Book 13"style="width: 20rem;height: 15rem;">
                             <div class="info">
                                 <a href="https://www.alice-in-wonderland.net/wp-content/uploads/alice-in-wonderland.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
                                 <button type="button" class="love" data-book-id="book13">
@@ -304,9 +330,9 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4"style="width: 15rem;height: 20rem;">
                             <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1452291694i/1852.jpg" 
-                                 class="d-block w-100" alt="Book 14">
+                                 class="d-block w-100" alt="Book 14"style="width: 20rem;height: 15rem;">
                             <div class="info">
                                 <a href="https://www.ibiblio.org/ebooks/London/Call%20of%20Wild.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
                                 <button type="button" class="love" data-book-id="book14">
@@ -314,9 +340,19 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4"style="width: 15rem;height: 20rem;">
+                          <img src="https://cdn2.penguin.com.au/covers/original/9780091906818.jpg" 
+                               class="d-block w-100" alt="Book 14"style="width: 20rem;height: 15rem;">
+                          <div class="info">
+                              <a href="file:///C:/Users/user/Downloads/think-and-grow-rich-napoleon-hill.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
+                              <button type="button" class="love" data-book-id="book14">
+                                  <i class="fa-regular fa-heart"></i> <!-- empty heart -->
+                              </button>
+                          </div>
+                      </div>
+                        <div class="col-md-4"style="width: 15rem;height: 20rem;">
                             <img src="https://th.bing.com/th/id/OIP.rLF2r6tLSFNJ1ZxrMj_s6wAAAA?rs=1&pid=ImgDetMain" 
-                                 class="d-block w-100" alt="Book 15">
+                                 class="d-block w-100" alt="Book 15"style="width: 20rem;height: 15rem;">
                             <div class="info">
                                 <a href="https://ia803409.us.archive.org/11/items/the-war-of-the-worlds-h.-g.-wells/The%20War%20of%20the%20Worlds%20-%20H.%20G.%20Wells.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
                                 <button type="button" class="love" data-book-id="book15">
@@ -328,9 +364,9 @@
                 </div>
                 <div class="carousel-item">
                     <div class="row g-3 justify-content-center">
-                        <div class="col-md-4">
+                        <div class="col-md-4"style="width: 15rem;height: 20rem;">
                             <img src="https://blog.12min.com/wp-content/uploads/2018/05/adsadsad.jpg" 
-                                 class="d-block w-100" alt="Book 16">
+                                 class="d-block w-100" alt="Book 16"style="width: 20rem;height: 15rem;">
                             <div class="info">
                                 <a href="https://ia800303.us.archive.org/13/items/homer-odyssey-loeb_202404/Homer_Odyssey_Loeb.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
                                 <button type="button" class="love" data-book-id="book16">
@@ -338,9 +374,9 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4"style="width: 15rem;height: 20rem;">
                             <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1687292469i/179782505.jpg" 
-                                 class="d-block w-100" alt="Book 17">
+                                 class="d-block w-100" alt="Book 17"style="width: 20rem;height: 15rem;">
                             <div class="info">
                                 <a href="https://ia802906.us.archive.org/34/items/war-and-peace_20200427/war-and-peace.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
                                 <button type="button" class="love" data-book-id="book17">
@@ -348,9 +384,19 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-4"style="width: 15rem;height: 20rem;">
+                          <img src="https://cdn.discordapp.com/attachments/1328336890537181264/1337116092778287214/image.png?ex=67a645e6&is=67a4f466&hm=4f44d788760a1c254e451f26d3c2bc719a525f68aaa61f762abd063ddcdd06f2&" 
+                               class="d-block w-100" alt="Book 8"style="width: 20rem;height: 15rem;">
+                          <div class="info">
+                              <a href="file:///C:/Users/user/Downloads/Introduction%20to%20Inorganic%20Chemistry,%20Penn%20State%20University.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
+                              <button type="button" class="love" data-book-id="book8">
+                                  <i class="fa-regular fa-heart"></i> <!-- empty heart -->
+                              </button>
+                          </div>
+                      </div>
+                        <div class="col-md-4"style="width: 15rem;height: 20rem;">
                             <img src="https://th.bing.com/th/id/R.98ec711a764cc91e4544e39738f1fd27?rik=TLsbMYasiOHpCg&pid=ImgRaw&r=0" 
-                                 class="d-block w-100" alt="Book 18">
+                                 class="d-block w-100" alt="Book 18"style="width: 20rem;height: 15rem;">
                             <div class="info">
                                 <a href="https://ia801700.us.archive.org/4/items/crime-and-punishment-fyodor-dostoyevsky-pdf/Crime%20and%20Punishment%20-%20Fyodor%20Dostoyevsky%20-%20PDF.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
                                 <button type="button" class="love" data-book-id="book18">
@@ -362,92 +408,121 @@
                 </div>
             </div>
             <!-- Carousel controls -->
-            <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselThree" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselThree" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
             </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselThree" data-bs-slide="next">
                 <span class="carousel-control-next-icon"></span>
-            </button> -->
+            </button>
         </div>
-        <div id="carouselThree" class="carousel slide" data-bs-ride="false" style="margin-top: 3rem;">
-          <div class="carousel-inner">
-              <div class="carousel-item active">
-                  <div class="row g-3 justify-content-center">
-                      <div class="col-md-4">
-                          <img src="https://th.bing.com/th/id/OIP.VXAu8aPk-_Pg98tSvDr3mwAAAA?rs=1&pid=ImgDetMain" 
-                               class="d-block w-100" alt="Book 13">
+        <section class="container my-5" id="Scientific">
+          <h2 class="text-center"></h2>
+      
+          <!-- Swiper 2: Featured Books -->
+          <h3 class="text-center mt-4">📖 Scientific</h3>
+          <div id="carouselFour" class="carousel slide" data-bs-ride="false">
+              <div class="carousel-inner">
+                  <div class="carousel-item active">
+                      <div class="row g-3 justify-content-center">
+                          <div class="col-md-4"style="width: 15rem;height: 20rem;">
+                              <img src="https://cdn.discordapp.com/attachments/1328336890537181264/1337115863072899204/image.png?ex=67a645b0&is=67a4f430&hm=5ef3a36daa70fcf1733388a54bc4547bab014d8107294ecfa8bda1f89a025d9d&" 
+                                   class="d-block w-100" alt="Book 7"style="width: 20rem;height: 15rem;">
+                              <div class="info">
+                                <a href="file:///C:/Users/user/Downloads/Organic%20Chemistry,%20John%20E.%20McMurry.pdf" class="btn custom-btn me-3" target="_blank">More info</a>
+  
+                                  <button type="button" class="love" data-book-id="book7">
+                                      <i class="fa-regular fa-heart"></i> <!-- empty heart -->
+                                  </button>
+                              </div>
+                          </div>
+                       
+                     
+                        <div class="col-md-4"style="width: 15rem;height: 20rem;">
+                            <img src="https://www.infobooks.org/wp-content/uploads/2023/10/4.-The-Science-of-Getting-Rich-Author-Wallace-D.-Wattles.jpg" 
+                                 class="d-block w-100" alt="Book 8"style="width: 20rem;height: 15rem;">
+                            <div class="info">
+                                <a href="file:///C:/Users/user/Downloads/think-and-grow-rich-napoleon-hill%20(1).pdf" class="btn custom-btn smoothscroll me-3">More info</a>
+                                <button type="button" class="love" data-book-id="book8">
+                                    <i class="fa-regular fa-heart"></i> <!-- empty heart -->
+                                </button>
+                            </div>
+                        </div>
+                        <div class="col-md-4"style="width: 15rem;height: 20rem;">
+                          <img src="https://www.infobooks.org/wp-content/uploads/2023/10/6.-The-Master-Key-Author-Charles-F.-Haanel.jpg" 
+                               class="d-block w-100" alt="Book 8"style="width: 20rem;height: 15rem;">
                           <div class="info">
-                              <a href="https://freeclassicebooks.com/Victor%20Hugo/Les%20Miserables.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
-                              <button type="button" class="love" data-book-id="book13">
+                              <a href="file:///C:/Users/user/Downloads/6.%20The%20Master%20Key%20Author%20Charles%20F.%20Haanel.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
+                              <button type="button" class="love" data-book-id="book8">
                                   <i class="fa-regular fa-heart"></i> <!-- empty heart -->
                               </button>
                           </div>
                       </div>
-                      <div class="col-md-4">
-                          <img src="https://imgv2-1-f.scribdassets.com/img/document/62629497/original/1c984fd6f0/1660366530?v=1" 
-                               class="d-block w-100" alt="Book 14">
-                          <div class="info">
-                              <a href="https://www.gutenberg.org/files/28054/old/28054-pdf.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
-                              <button type="button" class="love" data-book-id="book14">
-                                  <i class="fa-regular fa-heart"></i> <!-- empty heart -->
-                              </button>
+                          <div class="col-md-4"style="width: 15rem;height: 20rem;">
+                              <img src="https://cdn.discordapp.com/attachments/1328336890537181264/1337116480357138453/image.png?ex=67a64643&is=67a4f4c3&hm=fa04c8e3f4d852d436db9cfdbca7a378826024caf1364678c0c11b2258edfbb6&" 
+                                   class="d-block w-100" alt="Book 9"style="width: 20rem;height: 15rem;">
+                              <div class="info">
+                                  <a href="file:///C:/Users/user/Downloads/2.%20Applied%20Ecology%20Author%20WikiBooks%20(1).pdf" class="btn custom-btn smoothscroll me-3">More info</a>
+                                  <button type="button" class="love" data-book-id="book9">
+                                      <i class="fa-regular fa-heart"></i> <!-- empty heart -->
+                                  </button>
+                              </div>
                           </div>
                       </div>
-                      <div class="col-md-4">
-                          <img src="https://th.bing.com/th/id/OIP.Y-o_LgTKXaFtjIqEQsDqXQAAAA?rs=1&pid=ImgDetMain" 
-                               class="d-block w-100" alt="Book 15">
-                          <div class="info">
-                              <a href="https://freeclassicebooks.com/2019%20New%20Free%20Classic%20ebooks/I-R/Kafka%20Franz/pdf%20Files/Metamorphosis.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
-                              <button type="button" class="love" data-book-id="book15">
-                                  <i class="fa-regular fa-heart"></i> <!-- empty heart -->
-                              </button>
+                  </div>
+                  <div class="carousel-item">
+                      <div class="row g-3 justify-content-center">
+                          <div class="col-md-4"style="width: 15rem;height: 20rem;">
+                              <img src="https://cdn.discordapp.com/attachments/1328336890537181264/1337116643406512249/image.png?ex=67a6466a&is=67a4f4ea&hm=b38f03a08303b393ea65e3e81bb71dce5ec63cf236a7972aad9304d0e277523c&" 
+                                   class="d-block w-100" alt="Book 10"style="width: 20rem;height: 15rem;">
+                              <div class="info">
+                                  <a href="file:///C:/Users/user/Downloads/Biochemistry,%20Christa%20van%20Tellingen.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
+                                  <button type="button" class="love" data-book-id="book10">
+                                      <i class="fa-regular fa-heart"></i> <!-- empty heart -->
+                                  </button>
+                              </div>
+                          </div>
+                          <div class="col-md-4"style="width: 15rem;height: 20rem;">
+                              <img src="https://cdn.discordapp.com/attachments/1328336890537181264/1337117140448182282/image.png?ex=67a646e0&is=67a4f560&hm=dab091104ac8b7e765548846f0d3479eeae7bef6ab02b1a57f6ddc33f8d8130b&" 
+                                   class="d-block w-100" alt="Book 11"style="width: 20rem;height: 15rem;">
+                              <div class="info">
+                                  <a href="file:///C:/Users/user/Downloads/Routledge%20Handbook%20of%20Chinese%20Medicine,%20Vivienne%20Lo,%20Michael%20Stanley-Baker.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
+                                  <button type="button" class="love" data-book-id="book11">
+                                      <i class="fa-regular fa-heart"></i> <!-- empty heart -->
+                                  </button>
+                              </div>
+                          </div>
+                          <div class="col-md-4"style="width: 15rem;height: 20rem;">
+                            <img src="https://www.infobooks.org/wp-content/uploads/2023/10/5.-Mind-power-the-secret-of-mental-magic-Author-William-Walker-Atkinson.jpg" 
+                                 class="d-block w-100" alt="Book 11"style="width: 20rem;height: 15rem;">
+                            <div class="info">
+                                <a href="file:///C:/Users/user/Downloads/5.%20Mind%20power%20the%20secret%20of%20mental%20magic%20Author%20William%20Walker%20Atkinson.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
+                                <button type="button" class="love" data-book-id="book11">
+                                    <i class="fa-regular fa-heart"></i> <!-- empty heart -->
+                                </button>
+                            </div>
+                        </div>
+                          <div class="col-md-4"style="width: 15rem;height: 20rem;">
+                              <img src="https://th.bing.com/th/id/OIP.e1_ZYGxgOFAKIjkBHgXBagHaKf?rs=1&pid=ImgDetMain" 
+                                   class="d-block w-100" alt="Book 12"style="width: 20rem;height: 15rem;">
+                              <div class="info">
+                                  <a href="https://ia801801.us.archive.org/15/items/the-great-gatsby_202101/TheGreatGatsby.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
+                                  <button type="button" class="love" data-book-id="book12">
+                                      <i class="fa-regular fa-heart"></i> <!-- empty heart -->
+                                  </button>
+                              </div>
                           </div>
                       </div>
                   </div>
               </div>
-              <div class="carousel-item">
-                  <div class="row g-3 justify-content-center">
-                      <div class="col-md-4">
-                          <img src="https://blog.12min.com/wp-content/uploads/2018/05/adsadsad.jpg" 
-                               class="d-block w-100" alt="Book 16">
-                          <div class="info">
-                              <a href="file:///C:/Users/user/Downloads/Organic%20Chemistry,%20John%20E.%20McMurry.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
-                              <button type="button" class="love" data-book-id="book16">
-                                  <i class="fa-regular fa-heart"></i> <!-- empty heart -->
-                              </button>
-                          </div>
-                      </div>
-                      <div class="col-md-4">
-                          <img src="https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1687292469i/179782505.jpg" 
-                               class="d-block w-100" alt="Book 17">
-                          <div class="info">
-                              <a href="https://ia802906.us.archive.org/34/items/war-and-peace_20200427/war-and-peace.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
-                              <button type="button" class="love" data-book-id="book17">
-                                  <i class="fa-regular fa-heart"></i> <!-- empty heart -->
-                              </button>
-                          </div>
-                      </div>
-                      <div class="col-md-4">
-                          <img src="https://th.bing.com/th/id/R.98ec711a764cc91e4544e39738f1fd27?rik=TLsbMYasiOHpCg&pid=ImgRaw&r=0" 
-                               class="d-block w-100" alt="Book 18">
-                          <div class="info">
-                              <a href="https://ia801700.us.archive.org/4/items/crime-and-punishment-fyodor-dostoyevsky-pdf/Crime%20and%20Punishment%20-%20Fyodor%20Dostoyevsky%20-%20PDF.pdf" class="btn custom-btn smoothscroll me-3">More info</a>
-                              <button type="button" class="love" data-book-id="book18">
-                                  <i class="fa-regular fa-heart"></i> <!-- empty heart -->
-                              </button>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+              <!-- Carousel controls -->
+              <button class="carousel-control-prev" type="button" data-bs-target="#carouselFour" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#carouselFour" data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+              </button>
           </div>
-          <!-- Carousel controls -->
-          <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselThree" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselThree" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-          </button> -->
-      </div>
+      </section>
     </section>
     
     <!-- Read Me Later Section -->
@@ -588,5 +663,11 @@
     <script src="js/custom.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="js/love.js"></script>
   </body>
 </html>
