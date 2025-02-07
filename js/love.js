@@ -109,7 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     document.querySelectorAll(".love").forEach((button) => {
         button.addEventListener("click", () => {
-            const bookId = button.dataset.Id;
+            const bookId = button.dataset.bookId; // FIXED dataset key
             toggleFavorite(bookId, button);
         });
     });
@@ -119,6 +119,8 @@ function toggleFavorite(bookId, button) {
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 
     const bookCard = button.closest(".col-md-4");
+    if (!bookCard) return; // Prevent errors if the structure is incorrect
+
     const bookData = {
         id: bookId,
         imgSrc: bookCard.querySelector("img").src,
@@ -126,28 +128,34 @@ function toggleFavorite(bookId, button) {
         link: bookCard.querySelector(".info a").href,
     };
 
-    const index = favorites.findIndex((book) => book.id === bookId);
+    const existingBook = favorites.find((book) => book.id === bookId);
 
-    if (index === -1) {
-        favorites.push(bookData);
+    if (!existingBook) {
+        favorites.push(bookData); // Add to favorites
         button.innerHTML = `<i class="fa-solid fa-heart"></i>`; // Filled heart
     } else {
-        favorites.splice(index, 1);
+        favorites = favorites.filter((book) => book.id !== bookId); // Remove from favorites
         button.innerHTML = `<i class="fa-regular fa-heart"></i>`; // Empty heart
     }
 
-    localStorage.setItem("favorites", JSON.stringify(favorites));
+    localStorage.setItem("favorites", JSON.stringify(favorites)); // Save the updated favorites array
 }
 
 function loadFavorites() {
     let favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    favorites.forEach((favorite) => {
-        const button = document.querySelector(`.love[data-book-id="${favorite.id}"]`);
-        if (button) {
+    
+    document.querySelectorAll(".love").forEach((button) => {
+        const bookId = button.dataset.bookId;
+        // Check if the book is already in the favorites list and update the button accordingly
+        if (favorites.some((book) => book.id === bookId)) {
             button.innerHTML = `<i class="fa-solid fa-heart"></i>`; // Filled heart
+        } else {
+            button.innerHTML = `<i class="fa-regular fa-heart"></i>`; // Empty heart
         }
     });
 }
+
+
 
 
 
