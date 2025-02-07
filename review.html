@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Review Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+    }
+    #book-details {
+      margin-bottom: 20px;
+    }
+    #user-reviews {
+      margin-top: 20px;
+    }
+    textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+    input[type="number"] {
+      padding: 5px;
+      width: 60px;
+    }
+    button {
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Book Review Page</h1>
+  <div id="book-details"></div>
+  <div id="user-reviews"></div>
+
+  <script>
+    // Function to fetch book data from Google Books API
+    function fetchBookData(bookId) {
+      const apiUrl = `https://www.googleapis.com/books/v1/volumes/${bookId}`;
+      fetch(apiUrl)
+        .then(response => response.json())
+        .then(data => {
+          displayBookDetails(data);
+        })
+        .catch(error => console.log('Error fetching book data:', error));
+    }
+
+    // Function to display book details
+    function displayBookDetails(bookData) {
+      const bookElement = document.getElementById('book-details');
+      const averageRating = bookData.volumeInfo.averageRating || 'No rating available';
+      const title = bookData.volumeInfo.title;
+      const authors = bookData.volumeInfo.authors ? bookData.volumeInfo.authors.join(', ') : 'Unknown author';
+      const description = bookData.volumeInfo.description || 'No description available.';
+      const bookId = bookData.id;
+
+      bookElement.innerHTML = `
+        <h2>${title}</h2>
+        <p><strong>Author(s):</strong> ${authors}</p>
+        <p><strong>Description:</strong> ${description}</p>
+        <p><strong>Average Rating:</strong> ${averageRating}</p>
+        
+        <h3>Your Review:</h3>
+        <textarea id="user-review" placeholder="Write a review" rows="4"></textarea><br><br>
+        <label for="user-rating">Your Rating (1-5): </label>
+        <input type="number" id="user-rating" min="1" max="5"><br><br>
+        <button onclick="submitReview('${bookId}')">Submit Review</button>
+      `;
+
+      // Display previously saved reviews from localStorage
+      displayUserReviews(bookId);
+    }
+
+    // Function to submit a user review and rating
+    function submitReview(bookId) {
+      const reviewText = document.getElementById('user-review').value;
+      const rating = document.getElementById('user-rating').value;
+
+      if (!reviewText || !rating) {
+        alert("Please provide a review and a rating.");
+        return;
+      }
+
+      // Get existing reviews from localStorage
+      let reviews = JSON.parse(localStorage.getItem('book-reviews')) || [];
+
+      // Save the new review
+      reviews.push({ bookId, reviewText, rating });
+      
+      // Store updated reviews back into localStorage
+      localStorage.setItem('book-reviews', JSON.stringify(reviews));
+
+      // Clear the form
+      document.getElementById('user-review').value = '';
+      document.getElementById('user-rating').value = '';
+
+      // Update the display with the new review
+      displayUserReviews(bookId);
+    }
+
+    // Function to display saved user reviews from localStorage
+    function displayUserReviews(bookId) {
+      const reviews = JSON.parse(localStorage.getItem('book-reviews')) || [];
+      const userReviewsDiv = document.getElementById('user-reviews');
+      
+      // Filter reviews for the specific book
+      const bookReviews = reviews.filter(review => review.bookId === bookId);
+      
+      if (bookReviews.length > 0) {
+        userReviewsDiv.innerHTML = '<h3>Other Reviews:</h3>';
+        bookReviews.forEach(review => {
+          userReviewsDiv.innerHTML += `
+            <div>
+              <p><strong>Rating: ${review.rating}/5</strong></p>
+              <p>${review.reviewText}</p>
+            </div>
+          `;
+        });
+      } else {
+        userReviewsDiv.innerHTML = '<p>No reviews yet.</p>';
+      }
+    }
+
+    // Call this function to load the book data
+    fetchBookData('1eRdeBFO0T2eC');  // Replace with the actual book ID you want to display
+  </script>
+
+</body>
+</html>
